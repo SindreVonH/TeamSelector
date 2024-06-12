@@ -1,0 +1,214 @@
+/* Define the custom font using @font-face */
+@font-face {
+    font-family: 'Super Magic';
+    src: url('../fonts/SuperMagic-L3XVn.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Basic styles for the heading */
+.chrome-heading {
+    font-family: 'Super Magic', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Remove chrome effect, simple color */
+}
+
+/* Existing CSS for the form and other elements */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(270deg, #ff7e5f, #feb47b, #ff6a00);
+    background-size: 600% 600%;
+    animation: gradientShift 10s ease infinite;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.wavy-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    background: linear-gradient(270deg, #ff7e5f, #feb47b, #ff6a00);
+    background-size: 600% 600%;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1; /* Ensure content is above the background */
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box; /* Ensure padding and border are included in total width */
+}
+
+.login-container,
+.form-container,
+.admin-container {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px; /* Adding some border radius for rounded corners */
+    position: relative;
+    z-index: 2; /* Ensure content is above the background */
+    box-sizing: border-box; /* Ensure padding and border are included in total width */
+}
+
+.question {
+    display: none;
+}
+
+.question.active {
+    display: block;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.navigation-buttons button {
+    padding: 10px 20px;
+    gap: 5px;
+    border-radius: 30px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.navigation-buttons button:hover {
+    background: #555;
+}
+
+#submitButton {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    border-radius: 30px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+#submitButton:hover {
+    background: #555;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px; /* Add space below the heading */
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%; /* Adjust width to 100% */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+
+}
+
+form button {
+    display: block;
+    width: 100%; /* Adjust width to 100% */
+    padding: 10px;
+    border-radius: 30px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 0 auto; /* Center the button */
+}
+
+form button:hover {
+    background: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.delete-button {
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background: #ff1a1a;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%; /* Ensure container width adjusts for smaller screens */
+        padding: 5%; /* Ensure padding from each side */
+        margin: 0 auto; /* Center the container */
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"] {
+        padding: 8px;
+    }
+
+    form button {
+        padding: 10px;
+    }
+
+    table, th, td {
+        padding: 8px;
+    }
+}
+
