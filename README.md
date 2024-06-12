@@ -1,4 +1,4 @@
-"# TeamSelector" 
+# TeamSelector 
 Really bad but it is a working app.
 
 1. Get data from users
