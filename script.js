@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('copyData').addEventListener('click', function() {
             let combinedData = '';
             document.querySelectorAll('#submissionsTable tbody tr').forEach(row => {
-                combinedData += `${row.cells[0].innerText}\n${row.cells[1].InnerText.replace(/<br>/g, '\n')}\n\n`;
+                combinedData += `${row.cells[0].innerText}\n${row.cells[1].innerText.replace(/<br>/g, '\n')}\n\n`;
             });
             navigator.clipboard.writeText(combinedData).then(() => {
                 alert('Data copied!');
