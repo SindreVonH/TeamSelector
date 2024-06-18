@@ -157,8 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Admin page
-    if (window.location.pathname.endsWith('admin.html')) {
+   if (window.location.pathname.endsWith('admin.html')) {
         const accessToken = localStorage.getItem('accessToken');
         const apiKey = localStorage.getItem('apiKey');
 
@@ -206,14 +205,18 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('copyData').addEventListener('click', function() {
             let combinedData = '';
             document.querySelectorAll('#submissionsTable tbody tr').forEach(row => {
-                combinedData += `${row.cells[0].innerText}\n${row.cells[1].innerText.replace(/<br>/g, '\n')}\n\n`;
+                const nameCell = row.cells[0].innerText;
+                const dataCell = row.cells[1].innerText;
+
+                if (nameCell && dataCell) {
+                    combinedData += `${nameCell}\n${dataCell.replace(/<br>/g, '\n')}\n\n`;
+                }
             });
             navigator.clipboard.writeText(combinedData).then(() => {
                 alert('Data copied!');
             }).catch(err => console.error('Error copying data:', err));
         });
     }
-
     // Carousel functionality
     const questions = document.querySelectorAll('.question');
     const prevButton = document.getElementById('prevButton');
